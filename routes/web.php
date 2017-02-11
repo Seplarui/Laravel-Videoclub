@@ -12,35 +12,36 @@
  */
 
 Route::get('/', function () {
-    return "<h1>Pantalla Principal</h1>";
+    return view('home');
 });
 
 Route::get('/login', function() {
 
-    return "<h1>Pantalla Login</h1>";
+    return view('auth.login');
 });
 
 Route::get('/logout', function() {
 
-    return "<h1>Pantalla Logout</h1>";
+    //return view('index');
 });
 
 Route::get('/catalog', function() {
 
-    return "<h1>Pantalla Listado Películas</h1>";
+    return view('catalog.index');
 });
 
 Route::get('/catalog/show/{id}', function() {
 
-    return "<h1>Pantalla Vista detalle de película</h1>";
+
+    return view('catalog.show', array('id' => $id));
 });
 
 Route::get('/catalog/create', function() {
 
-    return "<h1>Pantalla Añadir Película</h1>";
+    return view('catalog.create');
 });
 
 Route::get('/catalog/edit/{id}', function() {
 
-    return "<h1>Pantalla Modificar película</h1>";
+    return view('catalog.edit', array('id' => $id));
 });
